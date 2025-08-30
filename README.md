@@ -18,7 +18,7 @@ will also see all of the documentation in your coding editor.
 
 ## Next Steps
 
-Open the file [lessons/00_Getting_Started/README.md](lessons/00_Getting_Started/README.md) to begin the lessons. 
+Open the file [ ](lessons/00_Getting_Started/README.md) to begin the lessons. 
 
 -------------------
 
