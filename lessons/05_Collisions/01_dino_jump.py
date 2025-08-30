@@ -33,6 +33,8 @@ PLAYER_SIZE = 25
 
 player_speed = 5
 
+score=0
+
 # Obstacle attributes
 OBSTACLE_WIDTH = 20
 OBSTACLE_HEIGHT = 20
@@ -58,10 +60,14 @@ class Obstacle(pygame.sprite.Sprite):
         self.rect.x -= obstacle_speed
         # Remove the obstacle if it goes off screen
         if self.rect.right < 0:
+            score+=1
             self.kill()
+            
+
+            
 
     def explode(self):
-        """Replace the image with an explosition image."""
+        """Replace the image with an explosion image."""
         
         # Load the explosion image
         self.image = self.explosion
@@ -138,7 +144,7 @@ def game_loop():
         # Add obstacles and update
         if pygame.time.get_ticks() - last_obstacle_time > 500:
             last_obstacle_time = pygame.time.get_ticks()
-            obstacle_count += add_obstacle(obstacles)
+            obstacle_count + = add_obstacle(obstacles)
         
         obstacles.update()
 
@@ -158,9 +164,10 @@ def game_loop():
 
         pygame.display.update()
         clock.tick(FPS)
-
+    
     # Game over screen
     screen.fill(WHITE)
+print(score)
 
 if __name__ == "__main__":
     game_loop()

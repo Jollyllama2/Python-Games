@@ -16,12 +16,15 @@ SCREEN_WIDTH, SCREEN_HEIGHT = 600, 600
 SQUARE_SIZE = 50
 SQUARE_COLOR = (0, 128, 255) # Red-Green-Blue color in the range 0-255
 BACKGROUND_COLOR = (255, 255, 255) # White
-SQUARE_SPEED = 500
+SQUARE_SPEED = 5
 FPS = 60
 
 # Initialize the screen
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Move the Square")
+
+red = (255,0,0)
+pygame.draw.circle(surface= pygame, color=red, center=90, radius=80)
 
 # Clock to control the frame rate
 clock = pygame.time.Clock()
@@ -44,7 +47,7 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         
-        # Get the keys pressed. Gtes an array of all the keys
+        # Get the keys pressed. Gets an array of all keys pressed
         # with a boolean value of whether they are pressed or not
         keys = pygame.key.get_pressed()
 

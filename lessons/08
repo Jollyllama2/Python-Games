@@ -1,4 +1,5 @@
 import pygame
+import math 
 
 pygame.init()
 screen = pygame.display.set_mode((890, 890))
@@ -15,23 +16,52 @@ player_size = 50
 
 player_color = (255,0,0) #red
 
+direction_x = 0
+
+direction_y = 0 
+                         
+line_length = 30 #length of line [.__________.] <--- whale
+
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False  # Set the flag to False to exit the loop
 
     keys = pygame.key.get_pressed()
+
+    direction_x = 0.    #resets direction 
+    direction_y = 0
+    
+    
     if keys [pygame.K_LEFT]:
-        player_x -= 5
+        direction_x = -5
     if keys [pygame.K_RIGHT]:
-        player_x +=5
+        direction_x = 5
     if keys [pygame.K_UP]:
-        player_y -= 5
+        direction_y = -5
     if keys [pygame.K_DOWN]:
-        player_y += 5
+        direction_y = 5
+
+    
+
+    player_x += direction_x
+
+    player_y += direction_y
 
 
-     if player_x < 0:
+    if player_x < 0:
+        player_x = 0
+    if player_x > screen.get_width() - player_size:
+        player_x = screen.get_width() - player_size
+    if player_y < 0:
+        player_y = 0
+    if player_y > screen.get_height() - player_size:
+        player_y = screen.get_height() - player_size
+
+
+
+    if player_x < 0:
         player_x = 0
     if player_x > screen.get_width() - player_size:
         player_x = screen.get_width() - player_size
@@ -39,10 +69,10 @@ while running:
     # update positions, variables, etc.
     screen.fill((0,0,0))
     pygame.draw.rect(screen, player_color, (player_x, player_y,player_size, player_size))
-
+    pygame.draw.line(screen,(0,0,255),(player_x, player_y) ,(player_x+direction_x * 20, player_y + direction_y*20), 5)
     # draw everything
     pygame.display.flip()
 
-    clock.tick(60)
+    clock.tick(30)
 
 pygame.quit()  # Uninitialize pygame modules

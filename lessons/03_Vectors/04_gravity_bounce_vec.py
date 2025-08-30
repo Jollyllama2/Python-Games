@@ -13,7 +13,7 @@ from dataclasses import dataclass
 
 class Colors:
     """Constants for Colors"""
-    WHITE = (255, 255, 255)
+    WHITE = (65, 255, 255)
     BLACK = (0, 0, 0)
     RED = (255, 0, 0)
     PLAYER_COLOR = (0, 0, 255)
@@ -23,10 +23,10 @@ class Colors:
 @dataclass
 class GameSettings:
     """Settings for the game"""
-    width: int = 500
-    height: int = 500
-    gravity: float = 0.3
-    player_start_x: int = 100
+    width: int = 705
+    height: int = 650
+    gravity: float = 0.01  
+    player_start_x: int = 192
     player_start_y: int = None
     player_v_y: float = 0  # Initial y velocity
     player_v_x: float = 4  # Initial x velocity

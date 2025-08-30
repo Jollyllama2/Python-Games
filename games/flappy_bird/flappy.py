@@ -3,7 +3,7 @@ from pygame.locals import *
 from pathlib import Path
 
 #VARIABLES
-SCREEN_WIDHT = 400
+SCREEN_WIDHT = 400 
 SCREEN_HEIGHT = 600
 SPEED = 20
 GRAVITY = 2.5
@@ -13,7 +13,7 @@ GROUND_WIDHT = 2 * SCREEN_WIDHT
 GROUND_HEIGHT= 100
 
 PIPE_WIDHT = 80
-PIPE_HEIGHT = 500
+PIPE_HEIGHT = 500 
 
 PIPE_GAP = 150
 
@@ -53,7 +53,7 @@ class Bird(pygame.sprite.Sprite):
         #UPDATE HEIGHT
         self.rect[1] += self.speed
 
-    def bump(self):
+    def bump(self): 
         self.speed = -SPEED
 
     def begin(self):

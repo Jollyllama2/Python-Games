@@ -23,6 +23,10 @@ Controls
 
 """
 
+
+
+
+
 import os
 import random
 from typing import List
@@ -34,10 +38,24 @@ import pygame as pg
 if not pg.image.get_extended():
     raise SystemExit("Sorry, extended image module required")
 
+keys = pg.key.get_pressed()
 
-# game constants
+
+if keys[pg.K_LEFT]:
+            class Player:
+                None
+
+if keys[pg.K_RIGHT]:          
+            class Player:
+                None
+if keys[pg.K_SPACE]:
+           
+            class Player:
+                None
+
+#  game constants
 MAX_SHOTS = 2  # most player bullets onscreen
-ALIEN_ODDS = 22  # chances a new alien appears
+ALIEN_ODDS = 22  # chances a new alien appears``
 BOMB_ODDS = 60  # chances a new bomb will drop
 ALIEN_RELOAD = 12  # frames between new aliens
 SCREENRECT = pg.Rect(0, 0, 640, 480)
@@ -45,6 +63,8 @@ SCORE = 0
 
 main_dir = os.path.split(os.path.abspath(__file__))[0]
 
+
+pg.draw.rect(screen, SQUARE_COLOR, (square_x, square_y, SQUARE_SIZE, SQUARE_SIZE))
 
 def load_image(file):
     """loads an image, prepares it for play"""

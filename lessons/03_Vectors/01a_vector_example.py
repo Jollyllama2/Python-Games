@@ -24,6 +24,7 @@ v2 = Vector20(3, -12)
 v3 = Vector20(-4, -2)  
 v4 = Vector20(-12, 0) 
 v5 = Vector20(0, 12)
+v6= Vector20(1.-19)
 
 start = draw_v20(screen, v0, v1)
 start = draw_v20(screen, start, v2)

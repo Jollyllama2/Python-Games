@@ -21,11 +21,11 @@ x_pos = 0
 y_pos = (SCREEN_HEIGHT - SQUARE_SIZE) // 2
 
 # Movement direction: 1 for right, -1 for left
-direction = 1
+direction = 2 
 
 # Main loop
 running = True
-while running:
+while running: 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
