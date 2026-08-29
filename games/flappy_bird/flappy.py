@@ -7,7 +7,7 @@ SCREEN_WIDHT = 400
 SCREEN_HEIGHT = 600
 SPEED = 20
 GRAVITY = 2.5
-GAME_SPEED = 15
+GAME_SPEED = 30
 
 GROUND_WIDHT = 2 * SCREEN_WIDHT
 GROUND_HEIGHT= 100
@@ -152,7 +152,7 @@ def main():
 
     while begin:
 
-        clock.tick(15)
+        clock.tick(60)
 
         for event in pygame.event.get():
             if event.type == QUIT:
