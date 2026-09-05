@@ -20,8 +20,8 @@ Controls
 * Left and right arrows to move.
 * Space bar to shoot
 * f key to toggle between fullscreen.
-
-"""
+ 
+"""         
 
 import os
 import random
